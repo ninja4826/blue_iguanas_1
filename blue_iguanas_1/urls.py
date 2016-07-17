@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^users/(?P<pk>[0-9]+)/$', urls.user_detail, name='user-detail'),
     url(r'^users/me$', urls.user_me, name='user-me'),
     url(r'^tasks/$', urls.task_list, name='task-list'),
+    url(r'^tasks/(?P<pk>[0-9]+)/$', urls.task_detail, name='task-detail'),
     url(r'^token_auth/', obtain_jwt_token),
     url(r'^token_refresh/', refresh_jwt_token),
 ]

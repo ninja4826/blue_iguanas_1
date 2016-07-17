@@ -1,4 +1,4 @@
-from todo.views import UserViewSet, TaskList
+from todo.views import UserViewSet, TaskList, TaskDetail
 from rest_framework import renderers
 
 user_list = UserViewSet.as_view({
@@ -16,3 +16,5 @@ user_me = UserViewSet.as_view({
 }, renderer_classes=[renderers.JSONRenderer])
 
 task_list = TaskList.as_view()
+
+task_detail = TaskDetail.as_view()
