@@ -5,7 +5,12 @@ from todo.models import Task
 
 User = get_user_model()
 
-class TaskSerializer(serializers.ModelSerializer): 
+class TaskSerializer(serializers.ModelSerializer):
+    priority = serializers.SerializerMethodField()
+    
+    def get_priority(self, task):
+        return task.get_priority_display()
+    
     class Meta:
         model = Task
         fields = ('id', 'user', 'title', 'desc', 'priority', 'completed', 'created')
